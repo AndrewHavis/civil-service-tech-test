@@ -15,7 +15,13 @@ You will also need to install the Grunt command line utility globally.
 If you get an error when running the `bower install` command, please ensure that Bower is installed too.
 
     npm install bower -g
-    
+
+If you need to install Sass, this can be done through Ruby's `gem` command.
+
+    sudo gem install sass
+	
+Note that on recent versions of Mac OS X (e.g. El Capitan), you may need to issue the command `sudo gem install sass -n /usr/local/bin` instead.
+
 ## Building
 The application can be built with `grunt build`, once Grunt has been installed as described above.
 
