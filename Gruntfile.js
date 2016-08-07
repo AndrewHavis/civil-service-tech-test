@@ -48,7 +48,7 @@ module.exports = function(grunt) {
       },
       build: {
          files: {
-           './public/styles/styles.css': './stylesheets/main.scss'
+           './public/styles/styles.css': './app/styles/main.scss'
          }
       },
       options: {
@@ -68,6 +68,14 @@ module.exports = function(grunt) {
           }
         }
     },
+    copy: {
+        build: {
+            expand: true,
+            src: 'app/scripts/*',
+            dest: 'public/scripts/',
+            flatten: true
+        }
+    },
     shell: {
       multiple: {
         command: [
@@ -82,9 +90,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-pug');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('test', ['sass:development', 'clean', 'jasmine', 'shell']);
-  grunt.registerTask('build', ['sass:build', 'pug:build']);
+  grunt.registerTask('test', ['sass:development', 'jasmine', 'shell']);
+  grunt.registerTask('build', ['sass:build', 'copy:build', 'pug:build']);
   grunt.registerTask('default', ['test']);
 };

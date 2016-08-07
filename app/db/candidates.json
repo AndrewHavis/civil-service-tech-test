@@ -1,0 +1,34 @@
+{
+    "candidates": [
+        {
+            "id": 1,
+            "name": "Andrew Havis",
+            "age": 30,
+            "summary": "Andrew is currently working as a web developer and tester within IBM, and has worked at IBM for over seven years."
+        },
+        {
+            "id": 2,
+            "name": "Bob Smith",
+            "age": 27,
+            "summary": "Bob is currently working as a software developer at BigCompany, and has a lot of Java experience."
+        },
+        {
+            "id": 3,
+            "name": "Sarah Jones",
+            "age": 29,
+            "summary": "Sarah is a project manager, and currently manages an agile-based mobile app development project."
+        },
+        {
+            "id": 4,
+            "name": "Elizabeth Watkins",
+            "age": 33,
+            "summary": "Elizabeth has a lot of experience in marketing, and is particularly skilled in promoting software."
+        },
+        {
+            "id": 5,
+            "name": "Paul Edwards",
+            "age": 31,
+            "summary": "Paul is an experienced mobile developer, and has advanced skills in developing for both iOS and Android."
+        }
+    ]
+}

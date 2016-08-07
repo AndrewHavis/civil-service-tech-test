@@ -26,6 +26,7 @@
     "evil": true,
     "forin": false,
     "immed": true,
+    "jquery": true,
     "laxbreak": false,
     "newcap": true,
     "noarg": true,

@@ -4,7 +4,64 @@ html(lang="en")
         // Meta properties
         meta(name="author" content="Andrew Havis")
         
+        // GOV.UK template
+        link(rel="stylesheet" href="govuk_template/assets/stylesheets/govuk-template.css" media="screen")
+        link(rel="stylesheet" href="govuk_template/assets/stylesheets/govuk-template-print.css" media="print")
+        link(rel="stylesheet" href="govuk_template/assets/stylesheets/fonts.css")
+        
+        // Import jQuery and DataTables
+        script(type="text/javascript" src="lib/jquery/dist/jquery.min.js")
+        script(type="text/javascript" src="lib/datatables.net/js/jquery.dataTables.min.js")
+        link(rel="stylesheet" href="lib/datatables.net-dt/css/jquery.dataTables.min.css")
+        
+        // Import styles and scripts
+        link(rel="stylesheet" href="styles/styles.css")
+        script(type="text/javascript" src="scripts/candidates.js")
+        
         // Page title
         title= "Civil Service Technical Test"
     body
-        h1= "Civil Service Technical Test"
+        
+        header#global-header(role="banner")
+            div.header-wrapper
+                div.header-global
+                    div.header-logo
+                        a.content#logo(href="")
+                            img(src="/govuk_template/assets/images/gov.uk_logotype_crown_invert_trans.png" width="35" height="31" alt="")
+        
+        #page-container
+            .grid-row
+                h1= "Civil Service Technical Test"
+            .grid-row
+                #search-container
+                    form
+                        input#candidate-search(type="text" placeholder="Search for candidates")
+            .grid-row
+                #candidate-list-container.column-third
+                    h2= "Candidate List"
+                    #candidate-list
+                        table#candidate-list-table
+                            tr
+                                th="Candidate ID"
+                                th="Name"
+                #candidate-details-container.column-two-thirds
+                    h2= "Candidate Details"
+                    h3#candidate-name
+                    div#candidate-id-container="Candidate ID: "
+                        span#candidate-id
+                    div#candidate-age-container="Age: "
+                        span#candidate-age
+                    div#candidate-summary-container="Summary: "
+                        span#candidate-summary
+                        
+        footer.group.js-footer#footer
+            .footer-wrapper
+                .footer-meta
+                    .footer-meta-inner
+                        div.open-government-licence
+                            p.logo
+                                a(href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license")="Open Government Licence"  
+                    .copyright
+                        a(href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/")
+        
+        script(type="text/javascript" src="/govuk_template/assets/javascripts/govuk-template.js")

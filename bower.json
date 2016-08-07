@@ -1,0 +1,30 @@
+{
+  "name": "govuk_frontend_toolkit_test_runner",
+  "description": "Civil Service techincal test",
+  "main": "app.js",
+  "authors": [
+    "Andrew Havis"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "civil",
+    "service",
+    "govuk",
+    "test",
+    "development"
+  ],
+  "homepage": "https://github.com/AndrewHavis/civil-service-tech-test",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "datatables.net": "^1.10.12",
+    "datatables.net-dt": "^1.10.12"
+  }
+}
