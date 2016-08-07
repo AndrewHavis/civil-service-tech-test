@@ -12,6 +12,7 @@
         @include heading-48;
         @extend %outdent-to-full-width;
         text-align: center;
+        font-weight: bold;
     }
     
     h3 {
@@ -23,7 +24,7 @@
         text-align: center;
         
         #candidate-search {
-            @include copy-14;
+            @include copy-16;
             @extend %outdent-to-full-width;
             width: 1200px;
             max-width: 90%;
@@ -32,15 +33,15 @@
 
     .column-third {
         @include grid-column( 1/3 );
-        @include copy-14;
+        @include copy-16;
     }
     .column-two-thirds {
         @include grid-column( 2/3 );
-        @include copy-14;
+        @include copy-16;
     }
     .column-full {
         @include grid-column( 1 );
-        @include copy-14;
+        @include copy-16;
     }
     
     // Show a hand pointer when hovering over the candidate's name or ID number in the left hand sidebar

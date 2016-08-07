@@ -7,6 +7,9 @@ const app = express();
 // Set up our root on the Express server to /public
 app.use('/', express.static('./public'));
 
+// Run our tests when we go to /test
+app.use('/test', express.static('./test'));
+
 // Get front-end dependencies via /bower_components
 app.use('/lib', express.static('./bower_components'));
 

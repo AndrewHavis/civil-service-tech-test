@@ -33,6 +33,9 @@ html(lang="en")
             .grid-row
                 h1= "Civil Service Technical Test"
             .grid-row
+                p.
+                    A list of candidates is shown below. To view the details for a candidate, click their name or candidate ID. You may also search for candidates by typing their name or candidate ID in the search field.
+            .grid-row
                 #search-container
                     form
                         input#candidate-search(type="text" placeholder="Search for candidates")
@@ -51,6 +54,8 @@ html(lang="en")
                         span#candidate-id
                     div#candidate-age-container="Age: "
                         span#candidate-age
+                    div#candidate-email-container="Email: "
+                        span#candidate-email
                     div#candidate-summary-container="Summary: "
                         span#candidate-summary
                         
