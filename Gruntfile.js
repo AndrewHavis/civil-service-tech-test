@@ -44,14 +44,29 @@ module.exports = function(grunt) {
       development: {
         files: {
           './spec/stylesheets/test-out.css': './spec/stylesheets/test.scss'
-        },
-        options: {
-          loadPath: [
-            './stylesheets'
-          ],
-          style: 'nested',
         }
       },
+      build: {
+         files: {
+           './public/styles/styles.css': './stylesheets/main.scss'
+         }
+      },
+      options: {
+        loadPath: [
+            './stylesheets'
+        ],
+        style: 'nested',
+      }
+    },
+    pug: {
+        build: {
+          options: {
+            pretty: true    
+          },
+          files: {
+            'public/index.html': ['app/index.pug']
+          }
+        }
     },
     shell: {
       multiple: {
@@ -66,8 +81,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-pug');
   grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('test', ['sass', 'clean', 'jasmine', 'shell']);
+  grunt.registerTask('test', ['sass:development', 'clean', 'jasmine', 'shell']);
+  grunt.registerTask('build', ['sass:build', 'pug:build']);
   grunt.registerTask('default', ['test']);
 };
