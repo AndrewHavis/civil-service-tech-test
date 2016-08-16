@@ -68,6 +68,21 @@ module.exports = function(grunt) {
           }
         }
     },
+    es6transpiler: { // Compile to ES5 as some browsers don't seem to support ES6 directly yet
+        build: {
+            src: 'app/scripts/candidates.js',
+            dest: 'public/scripts/candidates.js'
+        },
+        options: {
+            environments: [
+                "jquery",
+                "node"
+            ],
+            globals: {
+                document: true
+            }
+        }
+    },
     copy: {
         build: {
             expand: true,
@@ -91,9 +106,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-pug');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-es6-transpiler');
   grunt.loadNpmTasks('grunt-shell');
 
   grunt.registerTask('test', ['sass:development', 'jasmine', 'shell']);
-  grunt.registerTask('build', ['sass:build', 'copy:build', 'pug:build']);
+  grunt.registerTask('build', ['sass:build', 'es6transpiler:build', 'pug:build']);
   grunt.registerTask('default', ['test']);
 };
