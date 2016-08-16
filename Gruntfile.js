@@ -68,18 +68,16 @@ module.exports = function(grunt) {
           }
         }
     },
-    es6transpiler: { // Compile to ES5 as some browsers don't seem to support ES6 directly yet
-        build: {
-            src: 'app/scripts/candidates.js',
-            dest: 'public/scripts/candidates.js'
-        },
+    babel: { // Compile to ES5 as some browsers don't seem to support ES6/ES2015 directly yet
         options: {
-            environments: [
-                "jquery",
-                "node"
-            ],
-            globals: {
-                document: true
+            sourceMap: true,
+            presets: ['es2015'],
+            minified: true,
+            comments: false
+        },
+        build: {
+            files: {
+                'public/scripts/candidates.js': 'app/scripts/candidates.js'
             }
         }
     },
@@ -106,10 +104,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-pug');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-es6-transpiler');
+  grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-shell');
 
   grunt.registerTask('test', ['sass:development', 'jasmine', 'shell']);
-  grunt.registerTask('build', ['sass:build', 'es6transpiler:build', 'pug:build']);
+  grunt.registerTask('build', ['sass:build', 'babel:build', 'pug:build']);
   grunt.registerTask('default', ['test']);
 };
